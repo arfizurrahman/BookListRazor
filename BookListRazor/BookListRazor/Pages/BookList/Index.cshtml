@@ -2,7 +2,7 @@
 @using System.Linq
 @model BookListRazor.Pages.BookList.IndexModel
 
-<br/>
+<br />
 <div class="container row p-0 m-0">
     <div class="col-9">
         <h2 class="text-info">Book List</h2>
@@ -10,7 +10,7 @@
     <div class="col-3">
         <a asp-page="Create" class="btn btn-info form-control text-white">Create New Book</a>
     </div>
-    
+
     <div class="col-12 border p-3 mt-3">
         <form method="post">
             @if (Model.Books.Count() > 0)
@@ -19,8 +19,12 @@
                     <tr>
                         <th>
                             <label asp-for="Books.FirstOrDefault().Name"></label>
-                        </th><th>
+                        </th>
+                        <th>
                             <label asp-for="Books.FirstOrDefault().Author"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().ISBN"></label>
                         </th>
                         <th></th>
                     </tr>
@@ -29,8 +33,11 @@
                         <tr>
                             <td>@Html.DisplayFor(b => book.Name)</td>
                             <td>@Html.DisplayFor(b => book.Author)</td>
-                            <td><button class="btn btn-danger btn-sm">Delete</button>
-                                <a class="btn btn-success btn-sm text-white">Edit</a></td>
+                            <td>@Html.DisplayFor(b => book.ISBN)</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <a class="btn btn-success btn-sm text-white">Edit</a>
+                            </td>
                         </tr>
                     }
                 </table>
