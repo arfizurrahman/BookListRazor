@@ -19,7 +19,7 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                        <a href="/BookList/Edit?id=${data
+                        <a href="/BookList/Upsert?id=${data
                         }" class="btn btn-success text-white" style="curson: pointer; width: 70px;">
                             Edit
                         </a>
